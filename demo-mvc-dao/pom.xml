@@ -10,6 +10,17 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>demo-mvc-dao</artifactId>
-
+    <dependencies>
+        <dependency>
+            <groupId>vn.com.vnext</groupId>
+            <artifactId>demo-mvc-model</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>vn.com.vnext</groupId>
+            <artifactId>demo-mvc-util</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
 
 </project>

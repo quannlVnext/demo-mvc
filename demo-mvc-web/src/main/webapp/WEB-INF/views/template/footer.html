@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+>
+<head></head>
+<body>
+	<div th:fragment="footer" th:remove="tag">
+		<footer class="footer">
+			<div class="text-center" th:inline="text">&copy; [[#{footer.text.company}]]</div>
+		</footer>
+		<!--/#footer-->
+	</div>
+	<div th:fragment="script_footer" th:remove="tag">
+	</div>
+</body>
+</html>

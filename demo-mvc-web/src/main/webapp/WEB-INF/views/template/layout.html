@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+	<html xmlns="http://www.w3.org/1999/xhtml"
+	    xmlns:th="http://www.thymeleaf.org"
+	    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+  <head>
+	<title></title>
+	<object th:include="template/script :: head" th:remove="tag"></object>
+  </head>
+
+  <body>
+  	<div id="app" v-cloak="v-cloak">
+  		<div th:replace="template/header :: header">
+	           Header
+	    </div>
+	    <div layout:fragment="content">
+	           Content
+	    </div>
+		<div th:replace="template/footer :: footer">Copyright &copy; 2017 Systems Design Co., Ltd.</div>
+	</div>
+	<div th:replace="template/footer :: script_footer"></div>
+	<div layout:fragment="script_footer"></div>
+  </body>
+</html>

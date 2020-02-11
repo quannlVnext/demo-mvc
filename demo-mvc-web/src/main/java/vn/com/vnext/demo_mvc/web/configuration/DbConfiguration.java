@@ -1,18 +1,22 @@
-package vn.com.vnext.demo_mvc.configuration;
+package vn.com.vnext.demo_mvc.web.configuration;
 
+import java.util.HashMap;
+import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
-
-import javax.sql.DataSource;
-import java.util.HashMap;
-
-import jp.co.sdc.discovery_faq.dao.strategy.MySqlQueryGenerator;
-import jp.co.sdc.discovery_faq.dao.strategy.QueryGenerator;
+import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.orm.jpa.JpaTransactionManager;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.transaction.PlatformTransactionManager;
+import vn.com.vnext.demo_mvc.dao.strategy.MySqlQueryGenerator;
+import vn.com.vnext.demo_mvc.dao.strategy.QueryGenerator;
 
 
 @Configuration
@@ -102,7 +106,6 @@ public class DbConfiguration {
         } catch (Exception ex) {
             generator = new MySqlQueryGenerator();
         }
-
         return generator;
     }
 
